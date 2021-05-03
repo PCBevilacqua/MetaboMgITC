@@ -1,3 +1,16 @@
+#'Generalized ITC data fitting function
+#'
+#'Fits an ITC experiment to a user specified thermodynamic model to determine thermodynamic statistics. Raw ".itc" formatted data
+#'should be read in using "read.itc". Fits the data to a thermodynamic model then prints a graphical summary of the fit.
+#'
+#'@param cell Object created by "read.itc" for the ITC run containing the macromolecule.
+#'@param blank Object created by "read.itc" for the ITC run containing the ligand tirated into buffer.
+#'@param Thermodynamic.equation The thermodynamic model that you want to fit the data to. Default = "wiseman.isotherm".
+#'@param Fit.start Starting parameters for the non-linear regression. Default = = list(H = 2534, K = 2880).
+#'@param Remove.injection Injections you want to remove from subsequent analysis. Default = 1 is the standard for ITC experiments. More than one injection can be supplied in a vector.
+#'@param Saturation.threshold For low c value ITC experiments fit to Wiseman isotherms, macomolecule saturation ranging from 70% to 90% produce the same answers. Thus, sometimes it is desirable to standardize the saturation threshold between experiments to minimize degredation of a ligand or macromolecule (for example with ATP binding Mg). Default = FALSE. If set to 0.8, this function will only fit data required to reach 80% macromolecule saturation.
+#'@return A list containing summary statistics for the fit and a graphical depiction of the fits, the raw ITC curve, and the summary statistics.
+#' @export
 MetaboMgITC = function(cell,
                        blank,
                        Thermodynamic.equation = "Wiseman.isotherm",
@@ -137,8 +150,8 @@ MetaboMgITC = function(cell,
   ####Save the data####
 
   if (Save.path.and.prefix != FALSE){
-    ggplot2::ggsave(paste(Save.path.and.prefix, "results_plot.png", sep = ""), width = 6, height = 10)
-    write.csv(df.table, paste(Save.path.and.prefix, "results_table.csv", sep = ""), row.names = FALSE)
+    ggplot2::ggsave(paste(Save.path.and.prefix, "_results_plot.png", sep = ""), width = 6, height = 10)
+    write.csv(df.table, paste(Save.path.and.prefix, "_results_table.csv", sep = ""), row.names = FALSE)
   }
 
   ####Output####

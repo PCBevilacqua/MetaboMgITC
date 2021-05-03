@@ -1,3 +1,13 @@
+#'Imports a VP-ITC instument ".itc" formatted data file into R
+#'
+#'Opens a MicroCal VP-ITC instrument ".itc" formatted data file into R. Parses raw text into convenient data
+#'frames. Calculates reagent concentrations. Integrates raw differential power curves to determine the heat
+#'of each injection.
+#'
+#'@param path.to.itc.file Path to the ITC file ('.itc")
+#'@param print.peak.integration.graph Print an aesthetic depiction of the peak integration for each injection. Options = TRUE or FALSE. Default = FALSE. If TRUE will print a png in your working directory.
+#'@return A list of two data frames that can be passed to data analysis functions like "MetaboMgITC". The first dataframe contains the raw differential power (microcalories per second) as a function of time (second). The second data frame contains the heat of each injection (kilocalorie per mole injectant) and reagent concentration (molar). Volumes are reported as Liters. M is the concentration of the reagent in the cell. X and dX are the concentration of the ligand in the cell and the moles of ligand added in each injection respectively. dQ and dQ.dX are the heat produced by each injection and the heatheat produced by each injection divided by the moles added by each injection.
+#' @export
 read.itc =function(path.to.itc.file,
                    print.peak.integration.graph = FALSE,
                    integration.folder = NA){

@@ -4,14 +4,24 @@
 #'frames. Calculates reagent concentrations. Integrates raw differential power curves to determine the heat
 #'of each injection.
 #'
-#'@param path.to.itc.file Path to the ITC file ('.itc")
+#'@param file.concentrations Vector containing paths to an ITC file then reagent concentration ordered c(Path, syringe X concentration, syringe M concentration, syringe C concentration, cell X concentration, cell M concentration, cell C concentration). Enter a file path to use the concentration embedded in the raw .itc file.
 #'@param print.peak.integration.graph Print an aesthetic depiction of the peak integration for each injection. Options = TRUE or FALSE. Default = FALSE. If TRUE will print a png in your working directory.
-#'@return A list of two data frames that can be passed to data analysis functions like "MetaboMgITC". The first dataframe contains the raw differential power (microcalories per second) as a function of time (second). The second data frame contains the heat of each injection (kilocalorie per mole injectant) and reagent concentration (molar). Volumes are reported as Liters. M is the concentration of the reagent in the cell. X and dX are the concentration of the ligand in the cell and the moles of ligand added in each injection respectively. dQ and dQ.dX are the heat produced by each injection and the heatheat produced by each injection divided by the moles added by each injection.
+#'@return A list of two data frames that can be passed to data analysis functions like "MetaboMgITC". The first dataframe contains the raw differential power (microcalories per second) as a function of time (second). The second data frame contains the heat of each injection (kilocalorie per mole injectant) and reagent concentration (molar). Volumes are reported as Liters. M is the concentration of the reagent in the cell. X and dX are the concentration of the ligand in the cell and the moles of ligand added in each injection respectively. dQ and dQ.dX are the heat produced by each injection and the heat produced by each injection divided by the moles added by each injection.
 #' @export
-read.itc =function(path.to.itc.file,
+read.itc =function(file.concentrations,
                    print.peak.integration.graph = FALSE,
                    integration.folder = NA){
+  ####Parses file.concentrations to find path####
+
+  if (length(file.concentrations) == 1){
+    path.to.itc.file = file.concentrations
+  }else{
+    path.to.itc.file = file.concentrations[1]
+  }
+
   ####Open a connection to a ITC file####
+
+
   con = file(path.to.itc.file, "r")
 
   Temp.Found = FALSE
@@ -93,9 +103,19 @@ read.itc =function(path.to.itc.file,
 
   ####Parse reagent concentration data####
 
-  V0 = as.numeric(as.character(reagent.lines[4]))
-  M0 = as.numeric(as.character(reagent.lines[3]))/1000
-  X0 = as.numeric(as.character(reagent.lines[2]))/1000
+  if(length(file.concentrations) == 1){
+    V0 = as.numeric(as.character(reagent.lines[4]))
+    M0 = as.numeric(as.character(reagent.lines[3]))/1000
+    X0 = as.numeric(as.character(reagent.lines[2]))/1000
+  }else{
+    V0 = as.numeric(as.character(reagent.lines[4]))
+    X0.syringe = as.numeric(as.character(file.concentrations[2]))/1000
+    M0.syringe = as.numeric(as.character(file.concentrations[3]))/1000
+    C0.syringe = as.numeric(as.character(file.concentrations[4]))/1000
+    X0.cell = as.numeric(as.character(file.concentrations[5]))/1000
+    M0.cell = as.numeric(as.character(file.concentrations[6]))/1000
+    C0.cell = as.numeric(as.character(file.concentrations[7]))/1000
+  }
 
   ####Make a data frame for the raw differential power####
 
@@ -108,20 +128,41 @@ read.itc =function(path.to.itc.file,
 
   ####Determine the concentration of reagents after each injection####
 
-  V = c()
-  X =c()
-  M = c()
-  dX = c()
+  if(length(file.concentrations) == 1){
+    V = c()
+    X =c()
+    M = c()
+    dX = c()
 
-  for (i in df.inj$N){
-    V[i] = V0 + sum(df.inj$inj.V[1:i])/1000
-    X[i] = (sum(df.inj$inj.V[1:i])/1000)*X0/V[i]
-    M[i] = V0*M0/V[i]
+    for (i in df.inj$N){
+      V[i] = V0 + sum(df.inj$inj.V[1:i])/1000
+      X[i] = (sum(df.inj$inj.V[1:i])/1000)*X0/V[i]
+      M[i] = V0*M0/V[i]
+    }
+
+    df.inj$V = V
+    df.inj$X = X
+    df.inj$M = M
+  }else{
+    V = c()
+    X =c()
+    M = c()
+    C = c()
+    dX = c()
+
+    for (i in df.inj$N){
+      V[i] = V0 + sum(df.inj$inj.V[1:i])/1000
+      X[i] = (sum(df.inj$inj.V[1:i])/1000)*X0.syringe/V[i] + V0*X0.cell/V[i]
+      M[i] = (sum(df.inj$inj.V[1:i])/1000)*M0.syringe/V[i] + V0*M0.cell/V[i]
+      C[i] = (sum(df.inj$inj.V[1:i])/1000)*C0.syringe/V[i] + V0*C0.cell/V[i]
+    }
+
+    df.inj$V = V
+    df.inj$X = X
+    df.inj$M = M
+    df.inj$C = C
   }
 
-  df.inj$V = V
-  df.inj$X = X
-  df.inj$M = M
 
   ####Determine the heat produced by each injection####
 

@@ -175,9 +175,16 @@ read.itc =function(file.concentrations,
     dQ[i] = -pracma::polyarea(df$Time.sec, df$dP)
   }
 
-  df.inj$dQ = dQ
-  df.inj$dX = (df.inj$inj.V/10^6)*(X0)
-  df.inj$dQ.dX = df.inj$dQ/df.inj$dX/(10^9)
+  if(length(file.concentrations) == 1){
+    df.inj$dQ = dQ
+    df.inj$dX = (df.inj$inj.V/10^6)*(X0)
+    df.inj$dQ.dX = df.inj$dQ/df.inj$dX/(10^9)
+  }else{
+    df.inj$dQ = dQ
+    df.inj$dX = (df.inj$inj.V/10^6)*(X0.syringe)
+    df.inj$dQ.dX = df.inj$dQ/df.inj$dX/(10^9)
+  }
+
 
   ####Print a graph in order to check peak integration####
 

@@ -1,5 +1,25 @@
 #'Function that describes heat produced by each injection in an ITC experiment
 #'
+#'Function that describes heat produced by each injection in an ITC experiment when there is 1 to 1 binding of ligand to a macromolecule and a competator.
+#'
+#'@param V Cell volume in Liters
+#'@param X Ligand concentration in a cell
+#'@param M Macromolecule in a cell
+#'@param H Enthalpy of a ligand binding to a macromolecule
+#'@param K Molar affinity constant of a ligand binding to a macromolecule
+#'@return Heat produced by an injection
+#' @export
+Wiseman.isotherm.competative = function(V, X, M, C, H = 2534, K = 2880, Hc = 2534, Kc = 2880, c = 0, h = 0){
+  x = X/M
+  Kapp = K*(1 + c*Kc*C)/(1 + Kc*C)
+  Happ = H - ((Hc*Kc*C)/(1+Kc*C)) + ((Hc + h)*(x*Kc*C)/(1 + c*Kc*C))
+  r = 1/(Kapp*M)
+  y = 0.5 + ((1 - x - r)/(2*sqrt(((1 + x + r)^2)-(4*x))))
+  dQ.dX = Happ*V*y
+}
+
+#'Function that describes heat produced by each injection in an ITC experiment
+#'
 #'Function that describes heat produced by each injection in an ITC experiment when there is 1 to 1 binding of ligand to a macromolecule.
 #'
 #'@param V Cell volume in Liters

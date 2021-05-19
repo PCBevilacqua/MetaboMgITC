@@ -3,6 +3,8 @@
 export(Entropy)
 export(Gibbs.free.energy)
 export(MetaboMgITC)
+export(MetaboMgITC.compete)
 export(Wiseman.isotherm)
+export(Wiseman.isotherm.competative)
 export(read.itc)
 export(saturation)

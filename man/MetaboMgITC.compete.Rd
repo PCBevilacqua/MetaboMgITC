@@ -8,8 +8,10 @@ MetaboMgITC.compete(
   cell,
   competator,
   blank,
+  blank.competator,
   Thermodynamic.equation = "Wiseman.isotherm",
-  Fit.start = list(H = 3060, K = 23328, Hc = 10, Kc = 20, c = 0, h = 0),
+  Fit.start = list(V0 = 1.4247, H = 2534, K = 2880, Hc = 2534, Kc = 2880, c = 0, h = 0,
+    Mg.contaminate = 1),
   Remove.injection = 1,
   Saturation.threshold = FALSE,
   Save.path.and.prefix = FALSE
@@ -29,6 +31,8 @@ MetaboMgITC.compete(
 \item{Remove.injection}{Injections you want to remove from subsequent analysis. Default = 1 is the standard for ITC experiments. More than one injection can be supplied in a vector.}
 
 \item{Saturation.threshold}{For low c value ITC experiments fit to Wiseman isotherms, macomolecule saturation ranging from 70\% to 90\% produce the same answers. Thus, sometimes it is desirable to standardize the saturation threshold between experiments to minimize degredation of a ligand or macromolecule (for example with ATP binding Mg). Default = FALSE. If set to 0.8, this function will only fit data required to reach 80\% macromolecule saturation.}
+
+\item{competator.blank}{Object created by "read.itc" for the ITC run containing the ligand tirated into buffer with the competator.}
 }
 \value{
 A list containing summary statistics for the fit and a graphical depiction of the fits, the raw ITC curve, and the summary statistics.

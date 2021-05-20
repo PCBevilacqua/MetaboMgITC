@@ -94,7 +94,7 @@ log10K.0.calculator = function(log10K, I, M.charge, X.charge, XM.charge, A = 0.5
   y.XM = 10^(0.1*(XM.charge^2)*I - (A*(XM.charge^2)*sqrt(I))/(1+sqrt(I)))
   y.M = 10^(0.1*(M.charge^2)*I - (A*(M.charge^2)*sqrt(I))/(1+sqrt(I)))
   y.X = 10^(0.1*(X.charge^2)*I - (A*(X.charge^2)*sqrt(I))/(1+sqrt(I)))
-  log10K0 = log10K - log10(y.XM/(y.M*y.X))
+  log10K.0 = log10K - log10(y.XM/(y.M*y.X))
 }
 
 #'Function that calculates the log10 of a metal ion affinity constant for any Ionic strength  using the Debye-Huckel equation
@@ -112,7 +112,7 @@ log10K.IS.calculator = function(log10K.ref, I.ref, I, M.charge, X.charge, XM.cha
   y.XM = 10^(0.1*(XM.charge^2)*I.ref - (A*(XM.charge^2)*sqrt(I.ref))/(1+sqrt(I.ref)))
   y.M = 10^(0.1*(M.charge^2)*I.ref - (A*(M.charge^2)*sqrt(I.ref))/(1+sqrt(I.ref)))
   y.X = 10^(0.1*(X.charge^2)*I.ref - (A*(X.charge^2)*sqrt(I.ref))/(1+sqrt(I.ref)))
-  log10K0 = log10K.ref - log10(y.XM/(y.M*y.X))
+  log10K.0 = log10K.ref - log10(y.XM/(y.M*y.X))
   y.XM = 10^(0.1*(XM.charge^2)*I - (A*(XM.charge^2)*sqrt(I))/(1+sqrt(I)))
   y.M = 10^(0.1*(M.charge^2)*I - (A*(M.charge^2)*sqrt(I))/(1+sqrt(I)))
   y.X = 10^(0.1*(X.charge^2)*I - (A*(X.charge^2)*sqrt(I))/(1+sqrt(I)))
@@ -142,4 +142,21 @@ pKa.IS.calculator = function(pKa.ref, I.ref, I, X.charge, HX.charge, A = 0.524){
   pKa = pKa.0 + log10(y.HX/(y.H*y.X))
   print("pKa")
   print(pKa)
+}
+
+#'Function that calculates the log10 of a metal ion affinity constant for any Ionic strength  using the Debye-Huckel equation
+#'
+#'@param log10K.ref Molar affinity constant of a metabolite binding to a metal ion that you are referencing
+#'@param I.ref Ionic strength of the reference constant
+#'@param I ionic strength for the condition you want to calculate
+#'@param M.charge charge of the metal ion
+#'@param X.charge charge of the metabolite
+#'@param XM.charge Charge of the metal ion-metabolite complex
+#'@param A Debye-Huckel constant for the given temperature. Default A = 0.524 for 25C.
+#'@return the log10K at an ionic strength of zero
+#' @export
+log10K.IS.calculator.2 = function(log10K.ref, I.ref, I, M.charge, X.charge, XM.charge, A = 0.51){
+  z = ((X.charge)^2 + (M.charge)^2 - (XM.charge)^2)
+  log10K.0 = log10K.ref + (z*A*sqrt(I.ref))/(1 + 1.5*sqrt(I.ref))
+  log10K = log10K.0 - + (z*A*sqrt(I))/(1 + 1.5*sqrt(I))
 }

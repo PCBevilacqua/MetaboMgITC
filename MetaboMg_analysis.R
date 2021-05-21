@@ -22,7 +22,7 @@ df.B = read.itc("Data/B15mMMgintoB25CpH7js2021.itc")
 
 ?MetaboMgITC
 
-fit = MetaboMgITC(df.M, df.B, Saturation.threshold = 0.8,
+fit = MetaboMgITC(df.M, df.B,
             Save.path.and.prefix = "Results/M15mMMginto100uMATP25CpH7")
 
 fit
@@ -91,7 +91,7 @@ list.files("Data")
 
 ?read.itc
 
-df.M = read.itc(file.concentrations = c("Data/M15mMEDTAinto500uMfreeMg1mMEDTAMg240mMNaCl140mMKCl25CpH7.itc", 14, 0, 0, 1, 1.5, 0))
+df.M = read.itc(file.concentrations = c("Data/M6mMEDTAinto500uMfreeMg1mMEDTAMg240mMNaCl140mMKCl10mMHEPES25CpH7.itc", 6, 0, 0, 1, 1.5, 0))
 df.B = read.itc("Data/B6mMEDTAinto1mMEDTA240mMNaCl140mMKCl10mMHEPES25CpH7.itc")
 
 
@@ -213,8 +213,7 @@ df.B = read.itc("Data/B15mMEDTAinto1mMEDTA240mMNaCl140mMKCl25CpH7.itc")
 ?MetaboMgITC
 
 fit.M = MetaboMgITC(df.M, df.B,
-                  Save.path.and.prefix = "Results/15_mM_EDTA_into_1.5_mM_Mg_1_mM_EDTA",
-                  Saturation.threshold = 0.95)
+                  Save.path.and.prefix = "Results/15_mM_EDTA_into_1.5_mM_Mg_1_mM_EDTA")
 
 fit.M
 
@@ -222,15 +221,22 @@ fit.M
 
 list.files("Data")
 
-df.M = read.itc(file.concentrations = c("Data/C15mMEDTAinto500uMfreeMg150mMGlu1mMEDTAMg240mMNaCl140mMKCl25CpH7.itc", 14, 0, 0, 1, 1.5, 0))
+df.M = read.itc(file.concentrations = c("Data/C15mMEDTAinto500uMfreeMg150mMGlu1mMEDTAMg240mMNaCl140mMKCl25CpH7.itc", 15, 0, 0, 1, 1.5, 0))
 df.B = read.itc("Data/B15mMEDTAinto150mMGlu1mMEDTA240mMNaCl140mMKCl25CpH7.itc")
 
 ?MetaboMgITC
 
 fit.C = MetaboMgITC(df.M, df.B,
-                    Save.path.and.prefix = "Results/15_mM_EDTA_into_1.5_mM_Mg_1_mM_EDTA",
-                    Saturation.threshold = 0.95)
+                    Save.path.and.prefix = "Results/15_mM_EDTA_into_1.5_mM_Mg_1_mM_EDTA")
 
 fit.C
 
-(fit.M$Table[3,2] - fit.C$Table[3,2])/(0.15*fit.C$Table[3,2])
+
+K = fit.M$Table[3,2]
+K.app = fit.C$Table[3,2]
+
+K.c = (K - K.app)/(K.app*0.15)
+
+K.c
+
+1000/0.81

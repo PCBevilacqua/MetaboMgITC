@@ -2,6 +2,7 @@
 
 export(Entropy)
 export(Gibbs.free.energy)
+export(Kd.app.calc)
 export(MetaboMgITC)
 export(MetaboMgITC.compete)
 export(Wiseman.isotherm)

@@ -160,3 +160,112 @@ log10K.IS.calculator.2 = function(log10K.ref, I.ref, I, M.charge, X.charge, XM.c
   log10K.0 = log10K.ref + (z*A*sqrt(I.ref))/(1 + 1.5*sqrt(I.ref))
   log10K = log10K.0 - + (z*A*sqrt(I))/(1 + 1.5*sqrt(I))
 }
+
+#'Function that calculates the mM apparent disassociation constant (Kd)
+#'
+#'Corrects for ionic strength using the using Specific Interaction Theory (SIT) and corrects for
+#'pH using pKa's.
+#'
+#'@param metabolite The metabolite you want to model an apparant Kd for
+#'@param pH The pH you want to model an apparant Kd for
+#'@param I The ionic strength you want to model a Kd for
+#'@param M.charge The charge of the metal ion
+#'@param constants.path Path to the file containing critical stability constants for metal ion and proton binding
+#'@param A Constant for SIT at 25 degC
+#'@return An apparant Kd in mM (M/1000)
+#' @export
+Kd.app.calc = function(metabolite = "ATP",
+                       pH = 7.5,
+                       I = 0.165,
+                       M.charge = 2,
+                       A = 0.524,
+                       constants.path = "Binding_constant_concentration_data/210525_Metaboites_binding_Mg_thermodynamics.csv"){
+  df = read.csv(constants.path)
+  df = subset(df, df$Metabolite == metabolite)
+  if (length(df$Metabolite) == 0){
+    print(paste(metabolite, "is not availible in our database"))
+  }else{
+    ####Correct pKas for ionic strength####
+    df.is = data.frame("IS" = c(0.05, 0.10, 0.15, 0.2, 0.5, 1.0, 2.0, 3.0),
+                       "Correction" = c(0.09, 0.11, 0.12, 0.13, 0.15, 0.14, 0.11, 0.07))
+    correction = df.is$Correction[findInterval(I, df.is$IS)]
+    df$Log_K[-c(which(df$Equilibrium == "logK_ML/M.L"), which(df$Equilibrium == "logK_MHL/M.HL"))] = df$Log_K[-c(which(df$Equilibrium == "logK_ML/M.L"), which(df$Equilibrium == "logK_MHL/M.HL"))] + correction
+    ####Determine if monoprotic####
+
+    df.pKa = df[-c(which(df$Equilibrium == "logK_ML/M.L"), which(df$Equilibrium == "logK_MHL/M.HL")),]
+    if (length(is.na(df.pKa$Log_K)) <= 1){
+      monoprotic = TRUE
+    }else{
+      monoprotic = FALSE
+    }
+
+    ####Calculate a.L & a.HL####
+
+    if (monoprotic){
+      pKa = df.pKa$Log_K[which(df.pKa$Equilibrium == "logK_HL/H.L")]
+      a.L = 1/(1 + (10^(pKa - pH)))
+      a.HL = 1 - a.L
+    }else{
+      pKa.HL = df.pKa$Log_K[which(df.pKa$Equilibrium == "logK_HL/H.L")]
+      pKa.H2L = df.pKa$Log_K[which(df.pKa$Equilibrium == "logK_H2L/H.HL")]
+      a.L = 1/(1 + 10^(pKa.HL - pH) + 10^(pKa.H2L + pKa.HL - (2*pH)))
+      a.HL = 1/(1 + 10^(pH - pKa.HL) + 10^(pKa.H2L - pH))
+    }
+
+    ####Specific Interaction Theory (SIT) for IS####
+
+    L.charge = df$X.charge[1]
+    HL.charge = L.charge + 1
+
+    I.ref.L = as.numeric(as.character(df$Ionic.strength[which(df$Equilibrium == "logK_ML/M.L")]))
+    I.ref.HL = as.numeric(as.character(df$Ionic.strength[which(df$Equilibrium == "logK_MHL/M.HL")]))
+
+    log10K.ref.ML.over.M.L = as.numeric(as.character(df$Log_K[which(df$Equilibrium == "logK_ML/M.L")]))
+    log10K.ref.MHL.over.M.HL = as.numeric(as.character(df$Log_K[which(df$Equilibrium == "logK_MHL/M.HL")]))
+
+    z.L = ((L.charge)^2 + (M.charge)^2 - (L.charge + M.charge)^2)
+    z.HL = ((HL.charge)^2 + (M.charge)^2 - (L.charge + M.charge)^2)
+
+    log10K.ML.over.M.L.0 = log10K.ref.ML.over.M.L + (z.L*A*sqrt(I.ref.L))/(1 + 1.5*sqrt(I.ref.L))
+    log10K.MHL.over.M.HL.0 = log10K.ref.MHL.over.M.HL + (z.L*A*sqrt(I.ref.HL))/(1 + 1.5*sqrt(I.ref.HL))
+
+    log10K.ML.over.M.L = log10K.ML.over.M.L.0 - (z.L*A*sqrt(I))/(1 + 1.5*sqrt(I))
+    log10K.MHL.over.M.HL = log10K.MHL.over.M.HL.0 - (z.L*A*sqrt(I))/(1 + 1.5*sqrt(I))
+
+
+    ####Calculate Kd.app in mM####
+
+    Kd.app.ML.over.M.L = 1000/(a.L*(10^log10K.ML.over.M.L))
+    Kd.app.MHL.over.M.HL = 1000/(a.L*(10^log10K.MHL.over.M.HL))
+
+    ####Print results####
+
+    df.result = data.frame("Equillibrium" = c("ML/M.HL", "ML/M.HL"),
+                           "mole fraction" = c(a.L, a.HL),
+                           "Kd app mM" = c(Kd.app.ML.over.M.L, Kd.app.MHL.over.M.HL))
+
+    print(df.result)
+
+    ####Choose which Kd.app to use based on a####
+
+
+    if (length(which(is.na(df.result$Kd.app.mM))) == 2){
+      print(paste("Kd.app was not calculated because", metabolite, "binding to Mg2+ is not in the data set or is not predicted to significant affinity to Mg2+"))
+      K.app = NA
+    }else{
+      if (length(which(is.na(df.result$Kd.app.mM))) == 1){
+        K.app = df.result$Kd.app.mM[which(is.na(df.result$Kd.app.mM) != TRUE)]
+      }else{
+        if (a.L >= a.ML){
+          K.app = Kd.app.ML.over.M.L
+        }else{
+          K.app = Kd.app.MHL.over.M.HL
+        }
+      }
+    }
+    ####Return####
+
+    output = K.app
+
+  }
+}

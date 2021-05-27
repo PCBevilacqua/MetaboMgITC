@@ -109,7 +109,7 @@ IS = 0.5*(0.24+0.24+0.14+0.14+0.01+0.01)
 
 ?log10K.0.calculator
 
-log10.K.IS =  log10K.IS.calculator.2(2.47, 0.1, IS, 2, -4, -2)
+log10.K.IS =  log10K.IS.calculator.2(2.47, 0.1, IS, 2, -2, 0)
 
 log10.K.IS
 

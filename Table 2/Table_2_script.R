@@ -18,7 +18,7 @@ pH = 7.5
 
 #Test
 
-Kd.app = Kd.app.calc(df$Metabolites[1], pH, IS)
+Kd.app = Kd.app.calc("Lactic acid", pH, IS)
 Kd.app
 
 #Run in a for loop
@@ -32,6 +32,28 @@ for (i in 1:length(df$Metabolites)){
 }
 
 df$Kd.app = Kd.app
+Source = rep(NA, length(Kd.app))
+Source[which(is.na(Kd.app) == FALSE)] = "Calculated in this work"
+
+df$Source = Source
 
 ####Print the table and edit by hand####
+
+list.files()
+
+write.csv(df, "Table 2/Table_2.csv", row.names = FALSE)
+
+####Pull back in the hand curated csv and format it for Ryota####
+
+list.files("Table 2")
+
+df = read.csv("Table 2/Table_2_hand_edited.csv")
+
+head(df)
+
+df$MCM = df$Concentration*df$M/(df$M + df$Kd.app)
+
+View(df)
+
+df$Exp.biol.effect = df$MCM*df$Kd.app
 

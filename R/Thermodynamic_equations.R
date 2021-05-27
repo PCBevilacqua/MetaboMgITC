@@ -174,7 +174,7 @@ log10K.IS.calculator.2 = function(log10K.ref, I.ref, I, M.charge, X.charge, XM.c
 #'@param A Constant for SIT at 25 degC
 #'@return An apparant Kd in mM (M/1000)
 #' @export
-Kd.app.calc = function(metabolite = "Gluconic acid",
+Kd.app.calc = function(metabolite = "Glutathione",
                        pH = 7.5,
                        I = 0.165,
                        M.charge = 2,

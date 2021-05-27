@@ -133,7 +133,7 @@ MetaboMgITC = function(cell,
 
   results.table = ggplot2::ggplot(df.table, ggplot2::aes(x = Parameter, y = 1, label = round(Number, digits = 2))) +
     ggplot2::geom_tile(fill = "white", color = "black") +
-    ggplot2::geom_text() +
+    ggplot2::geom_text(size = 2) +
     ggplot2::theme_classic() +
     ggplot2::xlab("") +
     ggplot2::ylab("") +

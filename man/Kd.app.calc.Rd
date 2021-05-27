@@ -5,7 +5,7 @@
 \title{Function that calculates the mM apparent disassociation constant (Kd)}
 \usage{
 Kd.app.calc(
-  metabolite = "ATP",
+  metabolite = "Pyruvic acid",
   pH = 7.5,
   I = 0.165,
   M.charge = 2,

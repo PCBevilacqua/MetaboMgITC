@@ -174,7 +174,7 @@ log10K.IS.calculator.2 = function(log10K.ref, I.ref, I, M.charge, X.charge, XM.c
 #'@param A Constant for SIT at 25 degC
 #'@return An apparant Kd in mM (M/1000)
 #' @export
-Kd.app.calc = function(metabolite = "ATP",
+Kd.app.calc = function(metabolite = "Gluconic acid",
                        pH = 7.5,
                        I = 0.165,
                        M.charge = 2,
@@ -193,7 +193,7 @@ Kd.app.calc = function(metabolite = "ATP",
     ####Determine if monoprotic####
 
     df.pKa = df[-c(which(df$Equilibrium == "logK_ML/M.L"), which(df$Equilibrium == "logK_MHL/M.HL")),]
-    if (length(is.na(df.pKa$Log_K)) <= 1){
+    if (length(which(is.na(df.pKa$Log_K))) >= 2){
       monoprotic = TRUE
     }else{
       monoprotic = FALSE
@@ -236,7 +236,7 @@ Kd.app.calc = function(metabolite = "ATP",
     ####Calculate Kd.app in mM####
 
     Kd.app.ML.over.M.L = 1000/(a.L*(10^log10K.ML.over.M.L))
-    Kd.app.MHL.over.M.HL = 1000/(a.L*(10^log10K.MHL.over.M.HL))
+    Kd.app.MHL.over.M.HL = 1000/(a.HL*(10^log10K.MHL.over.M.HL))
 
     ####Print results####
 
@@ -248,7 +248,6 @@ Kd.app.calc = function(metabolite = "ATP",
 
     ####Choose which Kd.app to use based on a####
 
-
     if (length(which(is.na(df.result$Kd.app.mM))) == 2){
       print(paste("Kd.app was not calculated because", metabolite, "binding to Mg2+ is not in the data set or is not predicted to significant affinity to Mg2+"))
       K.app = NA
@@ -256,7 +255,7 @@ Kd.app.calc = function(metabolite = "ATP",
       if (length(which(is.na(df.result$Kd.app.mM))) == 1){
         K.app = df.result$Kd.app.mM[which(is.na(df.result$Kd.app.mM) != TRUE)]
       }else{
-        if (a.L >= a.ML){
+        if (a.L >= a.HL){
           K.app = Kd.app.ML.over.M.L
         }else{
           K.app = Kd.app.MHL.over.M.HL

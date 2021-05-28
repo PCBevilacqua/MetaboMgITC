@@ -240,7 +240,7 @@ Kd.app.calc = function(metabolite = "Glutathione",
 
     ####Print results####
 
-    df.result = data.frame("Equillibrium" = c("ML/M.HL", "ML/M.HL"),
+    df.result = data.frame("Equillibrium" = c("ML/M.L", "MHL/M.HL"),
                            "mole fraction" = c(a.L, a.HL),
                            "Kd app mM" = c(Kd.app.ML.over.M.L, Kd.app.MHL.over.M.HL))
 

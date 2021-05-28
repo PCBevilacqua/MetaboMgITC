@@ -9,16 +9,31 @@ Kd.app.EDTA.0.15.pH.7.5 = Kd.app.calc("EDTA", I = 0.15)
 Kd.app.EDTA.0.15.pH.7.5
 Kd.app.EDTA.0.39.pH.7.0 = Kd.app.calc("EDTA", pH = 7.0, I = 0.39)
 Kd.app.EDTA.0.39.pH.7.0
+Kd.app.EDTA.0.15.pH.12 = Kd.app.calc("EDTA", pH = 12, I = 0.15)
+Kd.app.EDTA.0.15.pH.12
+Kd.app.EDTA.0.39.pH.12 = Kd.app.calc("EDTA", pH = 12, I = 0.39)
+Kd.app.EDTA.0.39.pH.12
 
-Kd.app.ATP.0.15.pH.7.5 = Kd.app.calc(I = 0.15)
+
+Kd.app.ATP.0.15.pH.7.5 = Kd.app.calc("ATP", pH = 7.5, I = 0.15)
 Kd.app.ATP.0.15.pH.7.5
-Kd.app.ATP.0.39.pH.7.0 = Kd.app.calc(pH = 7.0, I = 0.39)
+Kd.app.ATP.0.39.pH.7.0 = Kd.app.calc("ATP", pH = 7.0, I = 0.39)
 Kd.app.ATP.0.39.pH.7.0
+Kd.app.ATP.0.15.pH.12 = Kd.app.calc("ATP", pH = 12, I = 0.15)
+Kd.app.ATP.0.15.pH.12
+Kd.app.ATP.0.39.pH.12 = Kd.app.calc("ATP", pH = 12, I = 0.39)
+Kd.app.ATP.0.39.pH.12
 
 Kd.app.Glucose.6P.0.15.pH.7.5 = Kd.app.calc("Glucose 6-P", I = 0.15)
 Kd.app.Glucose.6P.0.15.pH.7.5
 Kd.app.Glucose.6P.0.39.pH.7.0 = Kd.app.calc("Glucose 6-P", pH = 7.0, I = 0.39)
 Kd.app.Glucose.6P.0.39.pH.7.0
+Kd.app.Glucose.6P.0.15.pH.12 = Kd.app.calc("Glucose 6-P", pH = 12, I = 0.15)
+Kd.app.Glucose.6P.0.15.pH.12
+Kd.app.Glucose.6P.0.39.pH.12 = Kd.app.calc("Glucose 6-P", pH = 12, I = 0.39)
+Kd.app.Glucose.6P.0.39.pH.12
+
+
 
 ####ITC files####
 

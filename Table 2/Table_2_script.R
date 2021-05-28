@@ -57,3 +57,16 @@ View(df)
 
 df$Exp.biol.effect = df$MCM*df$Kd.app
 
+colnames(df)
+
+unique(df$Compartment)
+
+df = dplyr::filter(df, Compartment != "Mitochondria")
+
+unique(df$Compartment)
+
+df = dplyr::select(df, Species, Metabolites, Concentration, Kd.app, MCM, Exp.biol.effect, Source, Notes)
+
+write.csv(df, "Table_2_final.csv", row.names = FALSE)
+
+head(df)

@@ -137,19 +137,30 @@ Theoretical.Kd.app = c(Kd.app.EDTA.0.15.pH.7.5,
                        Kd.app.Glucose.6P.0.15.pH.7.5,
                        Kd.app.Glucose.6P.0.39.pH.7.0)
 
+High.pH.Kapp = c(Kd.app.EDTA.0.15.pH.12,
+                 Kd.app.EDTA.0.39.pH.12,
+                 Kd.app.ATP.0.15.pH.12,
+                 Kd.app.ATP.0.39.pH.12,
+                 Kd.app.Glucose.6P.0.15.pH.12,
+                 Kd.app.Glucose.6P.0.39.pH.12)
+
+No.IS.or.pK.corr = c(1000/(10^8.79),
+                     1000/(10^8.79),
+                     1000/(10^4.3),
+                     1000/(10^4.3),
+                     1000/(10^2.47),
+                     1000/(10^2.47))
+
 
 df = data.frame(Metabolite,
                 IS,
                 pH,
                 ITC.Kd.app,
-                Theoretical.Kd.app)
+                Theoretical.Kd.app,
+                High.pH.Kapp,
+                No.IS.or.pK.corr)
 
 df
 
-df$error = 100*(df$ITC.Kd.app - df$Theoretical.Kd.app)/df$ITC.Kd.app
-
-df
-
-list.files()
 
 write.csv(df, "Table 1/Table_1.csv", row.names = FALSE)

@@ -153,14 +153,14 @@ No.IS.or.pK.corr = c(1000/(10^8.79),
 
 
 df = data.frame(Metabolite,
+                No.IS.or.pK.corr,
+                High.pH.Kapp,
                 IS,
                 pH,
-                ITC.Kd.app,
                 Theoretical.Kd.app,
-                High.pH.Kapp,
-                No.IS.or.pK.corr)
+                ITC.Kd.app)
 
 df
 
 
-write.csv(df, "Table 1/Table_1.csv", row.names = FALSE)
+write.csv(df, "SI Table 2/SI_Table_2.csv", row.names = FALSE)

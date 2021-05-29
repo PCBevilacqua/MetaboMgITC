@@ -32,5 +32,5 @@ An apparant Kd in mM (M/1000)
 }
 \description{
 Corrects for ionic strength using the using Specific Interaction Theory (SIT) and corrects for
-pH using pKa's.
+pH using pKa's to caluclate populations of metal ion binding competent protonation states.
 }

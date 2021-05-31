@@ -164,7 +164,7 @@ log10K.IS.calculator.2 = function(log10K.ref, I.ref, I, M.charge, X.charge, XM.c
 #'Function that calculates the mM apparent disassociation constant (Kd)
 #'
 #'Corrects for ionic strength using the using Specific Interaction Theory (SIT) and corrects for
-#'pH using pKa's.
+#'pH using pKa's to caluclate populations of metal ion binding competent protonation states.
 #'
 #'@param metabolite The metabolite you want to model an apparant Kd for
 #'@param pH The pH you want to model an apparant Kd for

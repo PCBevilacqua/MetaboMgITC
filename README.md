@@ -5,6 +5,7 @@
 ## Dependencies
 
 R version version 4.1.0
+devtools (R package)
 pracma (R package)
 
 ## Recomended packages and programs

@@ -21,5 +21,5 @@ A list of two data frames that can be passed to data analysis functions like "Me
 \description{
 Opens a MicroCal VP-ITC instrument ".itc" formatted data file into R. Parses raw text into convenient data
 frames. Calculates reagent concentrations. Integrates raw differential power curves to determine the heat
-of each injection.
+of each injection using the polyarea function in pracma.
 }

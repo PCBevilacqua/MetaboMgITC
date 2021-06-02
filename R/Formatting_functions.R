@@ -2,7 +2,7 @@
 #'
 #'Opens a MicroCal VP-ITC instrument ".itc" formatted data file into R. Parses raw text into convenient data
 #'frames. Calculates reagent concentrations. Integrates raw differential power curves to determine the heat
-#'of each injection.
+#'of each injection using the polyarea function in pracma.
 #'
 #'@param file.concentrations Vector containing paths to an ITC file then reagent concentration ordered c(Path, syringe X concentration, syringe M concentration, syringe C concentration, cell X concentration, cell M concentration, cell C concentration). Enter a file path to use the concentration embedded in the raw .itc file.
 #'@param print.peak.integration.graph Print an aesthetic depiction of the peak integration for each injection. Options = TRUE or FALSE. Default = FALSE. If TRUE will print a png in your working directory.

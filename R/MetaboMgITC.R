@@ -1,12 +1,14 @@
 #'Generalized ITC data fitting function
 #'
-#'Fits an ITC experiment to a user specified thermodynamic model to determine thermodynamic statistics. Raw ".itc" formatted data
+#'Fits an ITC experiment to a Wiseman isotherm[1] to determine thermodynamic statistics. Raw ".itc" formatted data
 #'should be read in using "read.itc". Fits the data to a thermodynamic model then prints a graphical summary of the fit.
+#'
+#'[1] Turnbull, W. B.; Daranas, A. H. On the Value of c: Can Low Affinity Systems Be Studied by Isothermal Titration Calorimetry? Journal of the American Chemical Society 2003, 125 (48), 14859–14866. https://doi.org/10.1021/ja036166s.
 #'
 #'@param cell Object created by "read.itc" for the ITC run containing the macromolecule.
 #'@param blank Object created by "read.itc" for the ITC run containing the ligand tirated into buffer.
 #'@param Thermodynamic.equation The thermodynamic model that you want to fit the data to. Default = "wiseman.isotherm".
-#'@param Fit.start Starting parameters for the non-linear regression. Default = = list(H = 2534, K = 2880).
+#'@param Fit.start Starting parameters for the non-linear regression. Default = = list(H = 2.534, K = 2880).
 #'@param Remove.injection Injections you want to remove from subsequent analysis. Default = 1 is the standard for ITC experiments. More than one injection can be supplied in a vector.
 #'@param Saturation.threshold For low c value ITC experiments fit to Wiseman isotherms, macomolecule saturation ranging from 70% to 90% produce the same answers. Thus, sometimes it is desirable to standardize the saturation threshold between experiments to minimize degredation of a ligand or macromolecule (for example with ATP binding Mg). Default = FALSE. If set to 0.8, this function will only fit data required to reach 80% macromolecule saturation.
 #'@return A list containing summary statistics for the fit and a graphical depiction of the fits, the raw ITC curve, and the summary statistics.
@@ -14,7 +16,7 @@
 MetaboMgITC = function(cell,
                        blank,
                        Thermodynamic.equation = "Wiseman.isotherm",
-                       Fit.start = list(H = 2534, K = 2880),
+                       Fit.start = list(H = 2.534, K = 2880),
                        Remove.injection = 1,
                        Saturation.threshold = FALSE,
                        Save.path.and.prefix = FALSE){

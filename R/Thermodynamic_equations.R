@@ -163,8 +163,11 @@ log10K.IS.calculator.2 = function(log10K.ref, I.ref, I, M.charge, X.charge, XM.c
 
 #'Function that calculates the mM apparent disassociation constant (Kd)
 #'
-#'Corrects for ionic strength using the using Specific Interaction Theory (SIT) and corrects for
-#'pH using pKa's to caluclate populations of metal ion binding competent protonation states.
+#'Corrects for ionic strength using the using Specific Interaction Theory (SIT)[1] and corrects for
+#'pH using pKa's to calculate populations of metal ion binding competent protonation states[2].
+#'
+#'[1] 	Scatchard, George. Concentrated Solutions of Strong Electrolytes. Chem. Rev. 1936, 19 (3), 309–327. https://doi.org/10.1021/cr60064a008.
+#'[2] 	Mattocks, J. A.; Tirsch, J. L.; Cotruvo, J. A. Chapter Two - Determination of Affinities of Lanthanide-Binding Proteins Using Chelator-Buffered Titrations. In Methods in Enzymology; Cotruvo, J. A., Ed.; Rare-Earth Element Biochemistry: Characterization and Applications of Lanthanide-Binding Biomolecules; Academic Press, 2021; Vol. 651, pp 23–61. https://doi.org/10.1016/bs.mie.2021.01.044.
 #'
 #'@param metabolite The metabolite you want to model an apparant Kd for
 #'@param pH The pH you want to model an apparant Kd for

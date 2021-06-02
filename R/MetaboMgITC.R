@@ -1,9 +1,9 @@
 #'Generalized ITC data fitting function
 #'
-#'Fits an ITC experiment to a Wiseman isotherm[1] to determine thermodynamic statistics. Raw ".itc" formatted data
+#'Fits an ITC experiment to a Wiseman isotherm(1) to determine thermodynamic statistics. Raw ".itc" formatted data
 #'should be read in using "read.itc". Fits the data to a thermodynamic model then prints a graphical summary of the fit.
 #'
-#'[1] Turnbull, W. B.; Daranas, A. H. On the Value of c: Can Low Affinity Systems Be Studied by Isothermal Titration Calorimetry? Journal of the American Chemical Society 2003, 125 (48), 14859–14866. https://doi.org/10.1021/ja036166s.
+#'(1) Turnbull, W. B.; Daranas, A. H. On the Value of c: Can Low Affinity Systems Be Studied by Isothermal Titration Calorimetry? Journal of the American Chemical Society 2003, 125 (48), 14859–14866. https://doi.org/10.1021/ja036166s.
 #'
 #'@param cell Object created by "read.itc" for the ITC run containing the macromolecule.
 #'@param blank Object created by "read.itc" for the ITC run containing the ligand tirated into buffer.

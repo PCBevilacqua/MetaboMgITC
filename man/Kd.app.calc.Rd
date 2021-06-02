@@ -31,8 +31,8 @@ Kd.app.calc(
 An apparant Kd in mM (M/1000)
 }
 \description{
-Corrects for ionic strength using the using Specific Interaction Theory (SIT)\link{1} and corrects for
-pH using pKa's to calculate populations of metal ion binding competent protonation states\link{2}.
+Corrects for ionic strength using the using Specific Interaction Theory (SIT)(1) and corrects for
+pH using pKa's to calculate populations of metal ion binding competent protonation states(2).
 }
 \details{
 \link{1} 	Scatchard, George. Concentrated Solutions of Strong Electrolytes. Chem. Rev. 1936, 19 (3), 309–327. https://doi.org/10.1021/cr60064a008.

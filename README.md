@@ -4,14 +4,14 @@
 
 ## Dependencies
 
-R version version 4.1.0
-devtools (R package)
-pracma (R package)
+#### R version version 4.1.0
+#### devtools (R package)
+#### pracma (R package)
 
 ## Recomended packages and programs
 
-R studio
-tidyverse (R package)
+#### R studio
+#### tidyverse (R package)
 
 
 

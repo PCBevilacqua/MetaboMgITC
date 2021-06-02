@@ -26,5 +26,6 @@ for (i in 1:length(df$Citation)){
 
 View(df)
 
+list.files("SI_Table_3")
 
-write.csv(df, "SI_Table_3_final.csv", row.names = FALSE)
+write.csv(df, "SI_Table_3/SI_Table_3_final.csv", row.names = FALSE)

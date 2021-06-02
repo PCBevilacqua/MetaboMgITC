@@ -2,7 +2,7 @@ list.files("Table 1")
 
 library(tidyverse)
 
-df = read.csv("Table 1/Table_2_final.csv")
+df = read.csv("Table 1/Table_1_final.csv")
 
 head(df)
 
@@ -20,7 +20,7 @@ df = df %>% filter(Kd.app >= 2)
 
 sum(df$MCM, na.rm = TRUE)
 
-df = read.csv("Table 1/Table_2_final.csv")
+df = read.csv("Table 1/Table_1_final.csv")
 
 unique(df$Species)
 
@@ -36,7 +36,7 @@ df = df %>% filter(Kd.app >= 2)
 
 sum(df$MCM, na.rm = TRUE)
 
-df = read.csv("Table 1/Table_2_final.csv")
+df = read.csv("Table 1/Table_1_final.csv")
 
 unique(df$Species)
 

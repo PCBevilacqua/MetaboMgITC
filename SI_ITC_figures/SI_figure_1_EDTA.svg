@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    class="svglite"
    width="550pt"
    height="550pt"
    viewBox="0 0 550 550"
    version="1.1"
    id="svg1945"
-   sodipodi:docname="SI_figure_X_EDTA.svg"
-   inkscape:version="1.0.2 (1.0.2+r75+1)">
+   sodipodi:docname="SI_figure_1_EDTA.svg"
+   inkscape:version="1.1 (1:1.1+202105261517+ce6663b3b7)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
   <metadata
      id="metadata1949">
     <rdf:RDF>
@@ -23,7 +23,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -36,18 +36,20 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1733"
-     inkscape:window-height="849"
+     inkscape:window-width="1848"
+     inkscape:window-height="1136"
      id="namedview1947"
      showgrid="false"
-     inkscape:zoom="0.38669902"
-     inkscape:cx="-435.6411"
-     inkscape:cy="92.762877"
+     inkscape:zoom="2.1875"
+     inkscape:cx="361.82857"
+     inkscape:cy="617.37143"
      inkscape:window-x="72"
      inkscape:window-y="27"
-     inkscape:window-maximized="0"
+     inkscape:window-maximized="1"
      inkscape:current-layer="svg1945"
-     inkscape:document-rotation="0" />
+     inkscape:document-rotation="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="pt" />
   <defs
      id="defs1412">
     <style
@@ -774,7 +776,8 @@
        style="font-size:5.69px;font-family:Arimo"
        textLength="30.780001"
        lengthAdjust="spacingAndGlyphs"
-       id="text1660">326334.86</text>
+       id="text1660"
+       transform="matrix(0.55212244,0,0,1,45.044345,0.61849889)">3.26e5</text>
     <text
        x="133.96001"
        y="477.32999"
@@ -1535,7 +1538,8 @@
        style="font-size:5.69px;font-family:Arimo"
        textLength="27.16"
        lengthAdjust="spacingAndGlyphs"
-       id="text1917">23328.71</text>
+       id="text1917"
+       transform="matrix(0.67074257,0,0,1,116.57793,0.13574916)">2.33e4</text>
     <text
        x="385.95999"
        y="477.32999"

@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    class="svglite"
    width="550pt"
    height="550pt"
    viewBox="0 0 550 550"
    version="1.1"
    id="svg4788"
-   sodipodi:docname="SI_figure_Y_Glucose_6P.svg"
-   inkscape:version="1.0.2 (1.0.2+r75+1)">
+   sodipodi:docname="SI_figure_3_Glucose_6P.svg"
+   inkscape:version="1.1 (1:1.1+202105261517+ce6663b3b7)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
   <metadata
      id="metadata4792">
     <rdf:RDF>
@@ -23,7 +23,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -40,13 +40,15 @@
      inkscape:window-height="1136"
      id="namedview4790"
      showgrid="false"
-     inkscape:zoom="1.09375"
-     inkscape:cx="306.55834"
-     inkscape:cy="229.34371"
+     inkscape:zoom="6.1871843"
+     inkscape:cx="211.80879"
+     inkscape:cy="662.09438"
      inkscape:window-x="72"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg4788" />
+     inkscape:current-layer="svg4788"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="pt" />
   <defs
      id="defs4239">
     <style
@@ -802,7 +804,8 @@
        style="font-size:5.69px;font-family:Arimo"
        textLength="19.92"
        lengthAdjust="spacingAndGlyphs"
-       id="text4499">147.39</text>
+       id="text4499"
+       transform="matrix(0.89669916,0,0,1,10.796118,0.12562046)">1.47e2</text>
     <text
        x="133.96001"
        y="477.32999"
@@ -1575,7 +1578,8 @@
        style="font-size:5.69px;font-family:Arimo"
        textLength="16.290001"
        lengthAdjust="spacingAndGlyphs"
-       id="text4760">49.84</text>
+       id="text4760"
+       transform="matrix(0.94336138,0,0,1,21.193479,0.20778907)">4.98e1</text>
     <text
        x="385.95999"
        y="477.32999"

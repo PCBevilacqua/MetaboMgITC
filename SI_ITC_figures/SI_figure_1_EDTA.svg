@@ -770,15 +770,6 @@
        lengthAdjust="spacingAndGlyphs"
        id="text1658">25.06</text>
     <text
-       x="102.69"
-       y="477.32999"
-       text-anchor="middle"
-       style="font-size:5.69px;font-family:Arimo"
-       textLength="30.780001"
-       lengthAdjust="spacingAndGlyphs"
-       id="text1660"
-       transform="matrix(0.55212244,0,0,1,45.044345,0.61849889)">3.26e5</text>
-    <text
        x="133.96001"
        y="477.32999"
        text-anchor="middle"
@@ -1532,15 +1523,6 @@
        lengthAdjust="spacingAndGlyphs"
        id="text1915">25.09</text>
     <text
-       x="354.69"
-       y="477.32999"
-       text-anchor="middle"
-       style="font-size:5.69px;font-family:Arimo"
-       textLength="27.16"
-       lengthAdjust="spacingAndGlyphs"
-       id="text1917"
-       transform="matrix(0.67074257,0,0,1,116.57793,0.13574916)">2.33e4</text>
-    <text
        x="385.95999"
        y="477.32999"
        text-anchor="middle"
@@ -1656,4 +1638,26 @@
        x="277.66211"
        y="55.040714"
        style="stroke-width:0.75">(B)</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:6px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';stroke-width:0.75"
+     x="134.55957"
+     y="519.67688"
+     id="text39592"><tspan
+       sodipodi:role="line"
+       id="tspan39590"
+       style="stroke-width:0.75"
+       x="134.55957"
+       y="519.67688">3.26e5</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:6px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';stroke-width:0.75"
+     x="384.69992"
+     y="519.4054"
+     id="text48664"><tspan
+       sodipodi:role="line"
+       id="tspan48662"
+       style="stroke-width:0.75"
+       x="384.69992"
+       y="519.4054">2.33e4</tspan></text>
 </svg>

@@ -41,8 +41,8 @@
      id="namedview4790"
      showgrid="false"
      inkscape:zoom="6.1871843"
-     inkscape:cx="211.80879"
-     inkscape:cy="662.09438"
+     inkscape:cx="515.01618"
+     inkscape:cy="662.09439"
      inkscape:window-x="72"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
@@ -797,15 +797,6 @@
        textLength="16.290001"
        lengthAdjust="spacingAndGlyphs"
        id="text4497">25.01</text>
-    <text
-       x="102.69"
-       y="477.32999"
-       text-anchor="middle"
-       style="font-size:5.69px;font-family:Arimo"
-       textLength="19.92"
-       lengthAdjust="spacingAndGlyphs"
-       id="text4499"
-       transform="matrix(0.89669916,0,0,1,10.796118,0.12562046)">1.47e2</text>
     <text
        x="133.96001"
        y="477.32999"
@@ -1572,15 +1563,6 @@
        lengthAdjust="spacingAndGlyphs"
        id="text4758">25.04</text>
     <text
-       x="354.69"
-       y="477.32999"
-       text-anchor="middle"
-       style="font-size:5.69px;font-family:Arimo"
-       textLength="16.290001"
-       lengthAdjust="spacingAndGlyphs"
-       id="text4760"
-       transform="matrix(0.94336138,0,0,1,21.193479,0.20778907)">4.98e1</text>
-    <text
        x="385.95999"
        y="477.32999"
        text-anchor="middle"
@@ -1700,4 +1682,26 @@
          y="-114.40278"
          style="stroke-width:0.75">(B)</tspan></text>
   </g>
+  <text
+     xml:space="preserve"
+     style="font-size:6px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';stroke-width:0.75"
+     x="128.43851"
+     y="504.58218"
+     id="text57326"><tspan
+       sodipodi:role="line"
+       id="tspan57324"
+       style="stroke-width:0.75"
+       x="128.43851"
+       y="504.58218">1.47e2</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:6px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';stroke-width:0.75"
+     x="380.19043"
+     y="505.01669"
+     id="text64194"><tspan
+       sodipodi:role="line"
+       id="tspan64192"
+       style="stroke-width:0.75"
+       x="380.19043"
+       y="505.01669">4.91e1</tspan></text>
 </svg>

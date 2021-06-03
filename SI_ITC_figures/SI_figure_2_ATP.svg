@@ -40,9 +40,9 @@
      inkscape:window-height="1136"
      id="namedview2777"
      showgrid="false"
-     inkscape:zoom="3.0935922"
-     inkscape:cx="217.06158"
-     inkscape:cy="598.17193"
+     inkscape:zoom="2.1875"
+     inkscape:cx="542.62857"
+     inkscape:cy="691.88572"
      inkscape:window-x="72"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
@@ -737,15 +737,6 @@
        textLength="16.290001"
        lengthAdjust="spacingAndGlyphs"
        id="text2488">25.01</text>
-    <text
-       x="102.69"
-       y="477.32999"
-       text-anchor="middle"
-       style="font-size:5.69px;font-family:Arimo"
-       textLength="27.16"
-       lengthAdjust="spacingAndGlyphs"
-       id="text2490"
-       transform="matrix(0.78644748,0,0,1.3003828,23.589773,-142.95174)">1.81e4</text>
     <text
        x="133.96001"
        y="477.32999"
@@ -1500,15 +1491,6 @@
        lengthAdjust="spacingAndGlyphs"
        id="text2745">25.07</text>
     <text
-       x="354.69"
-       y="477.32999"
-       text-anchor="middle"
-       style="font-size:5.69px;font-family:Arimo"
-       textLength="23.540001"
-       lengthAdjust="spacingAndGlyphs"
-       id="text2747"
-       transform="matrix(0.82331423,0,0,1,62.580334,0.7430836)">3.94e3</text>
-    <text
        x="385.95999"
        y="477.32999"
        text-anchor="middle"
@@ -1628,4 +1610,26 @@
          y="-114.40278"
          style="stroke-width:0.75">(B)</tspan></text>
   </g>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.75"
+     x="133.07764"
+     y="502.92474"
+     id="text11744"><tspan
+       sodipodi:role="line"
+       id="tspan11742"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.75"
+       x="133.07764"
+       y="502.92474">1.81e4</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.75"
+     x="385.23227"
+     y="503.15771"
+     id="text28694"><tspan
+       sodipodi:role="line"
+       id="tspan28692"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.75"
+       x="385.23227"
+       y="503.15771">3.94e3</tspan></text>
 </svg>

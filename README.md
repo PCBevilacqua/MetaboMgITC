@@ -41,6 +41,12 @@
 
 ## 3.1 Apparant dissacociation constant approximation
 
+#### The apparent disassociation constant (KD') for a metal ion  binding to a metabolite at a pH and ionic strength is:
+
+
+
+#### Where [M] is the concentration of metal ions. [L] and [ML] are the sum of the concentration of all protonation states for the metabolite and the metabolite magnesium complex respectively. The KD' for each ligand at a given ionic strength and pH was calculated using absolute metal ion binding constants for a given ligand protonation state and protonation constants (pKa’s) from the literature using equation 2.
+
 ## 3.2 Calculating MCM levels in cells
 
 ## 3.3 ITC data collection and analysis

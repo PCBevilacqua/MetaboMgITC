@@ -34,6 +34,9 @@
 ## Video Tutorials
 
 #### 1.) Reconstituting MetaboMgITC on your own console
+
+https://youtu.be/OvVh7j-uIcE
+
 #### 2.) Using Kd.app.calc
 #### 3.) ITC data analysis
 

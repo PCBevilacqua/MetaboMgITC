@@ -38,6 +38,9 @@
 https://youtu.be/OvVh7j-uIcE
 
 #### 2.) Using Kd.app.calc
+
+https://youtu.be/ViZcHrtGpZs 
+
 #### 3.) ITC data analysis
 
 # 3. Methods

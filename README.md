@@ -109,6 +109,7 @@ z = z<sub>L</sub><sup>2</sup> + z<sub>M</sub><sup>2</sup> - z<sub>ML</sub><sup>2
 ##### (14) 	Yamagami, R.; Bingaman, J. L.; Frankel, E. A.; Bevilacqua, P. C. Cellular Conditions of Weakly Chelated Magnesium Ions Strongly Promote RNA Stability and Catalysis. Nat. Commun. 2018, 9 (1), 2149. https://doi.org/10.1038/s41467-018-04415-1.
 ##### (15) 	Yamagami, R.; Huang, R.; Bevilacqua, P. C. Cellular Concentrations of Nucleotide Diphosphate-Chelated Magnesium Ions Accelerate Catalysis by RNA and DNA Enzymes. Biochemistry 2019, 58 (38), 3971–3979. https://doi.org/10.1021/acs.biochem.9b00578.
 
+# 5. Acknowledgements
 
-
+This work was supported by NIH grant R35-GM127064 and NASA grant 80NSSC17K0034 (to P.C.B.). R.Y. was supported by Overseas Research Fellowship (201906624) from Japan Society for the Promotion of Science.
 

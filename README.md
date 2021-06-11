@@ -43,6 +43,8 @@ https://youtu.be/ViZcHrtGpZs
 
 #### 3.) ITC data analysis
 
+https://youtu.be/hlL0VxYa2vw
+
 # 3. Methods
 
 ## 3.1 Apparant dissacociation constant approximation
